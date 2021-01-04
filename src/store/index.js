@@ -16,8 +16,10 @@ const mutations = {
       state.shareLink = "";
       setTimeout(() => (state.bannerOpen = false), 3000);
     } else {
-      var shareLink = "http://www.shoppies.me/?nominations=";
-      state.nominations.forEach(movie => (shareLink += `${movie.imdbID},`));
+      var shareLink = "http://www.shoppies.me/?";
+      state.nominations.forEach(
+        movie => (shareLink += `nomination=${movie.imdbID}`)
+      );
       state.shareLink = shareLink.substring(0, shareLink.length - 1);
     }
   },
@@ -39,18 +41,14 @@ const actions = {
   async search({ state }, { query, year }) {
     state.isLoadingResults = true;
 
-    const response = await axios.get(
-      `/api/movies?title=${query}&year=${year}`
-    );
+    const response = await axios.get(`/api/movies?title=${query}&year=${year}`);
     const searchResults = response.data;
     if (searchResults.totalResults > 0)
       state.searchResults = searchResults.Search;
     state.isLoadingResults = false;
   },
   async nominate({ state }, { imdbID, hideConfirmation }) {
-    const response = await axios.get(
-      `/api/movie?id=${imdbID}`
-    );
+    const response = await axios.get(`/api/movie?id=${imdbID}`);
 
     // Check if valid movie and list not full
     if (response.data.Response != "False" && state.nominations.length < 5) {
