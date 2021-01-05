@@ -17,9 +17,7 @@ const mutations = {
       setTimeout(() => (state.bannerOpen = false), 3000);
     } else {
       var shareLink = "http://www.shoppies.me/?";
-      state.nominations.forEach(
-        movie => (shareLink += `n=${movie.imdbID}&`)
-      );
+      state.nominations.forEach(movie => (shareLink += `n=${movie.imdbID}&`));
       state.shareLink = shareLink.substring(0, shareLink.length - 1);
     }
   },

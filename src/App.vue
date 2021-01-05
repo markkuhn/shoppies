@@ -6,7 +6,8 @@
   <div v-else class="ui container">
     <div class="ui relaxed grid">
       <div class="ten wide column">
-        <h1 class="ui header">The Shoppies</h1>
+        <!-- <h1 class="ui header">The Shoppies</h1> -->
+        <img class="ui medium image logo" src="@/assets/logo.jpg" />
         <SearchBar />
         <h4 v-if="searchResults.length == 0">Start typing to see results</h4>
         <div v-else class="ui four cards">
@@ -67,14 +68,14 @@ export default {
   created() {
     if (document.location.search) {
       var ids = [];
-      var noms = document.location.search.substring(1).split('&');
-      noms.forEach(id => ids.push(id.split('=')[1]));
+      var noms = document.location.search.substring(1).split("&");
+      noms.forEach(id => ids.push(id.split("=")[1]));
       this.$store.dispatch("restoreNominations", ids);
     }
   },
   methods: {
     ...mapActions(["getSearchResults"]),
-    ...mapMutations(["closeMessage"]),
+    ...mapMutations(["closeMessage"])
   }
 };
 </script>
@@ -85,5 +86,14 @@ export default {
 }
 .info.message {
   text-align: center;
+}
+.logo {
+  margin-bottom: 1.3rem;
+}
+.nominations {
+  margin-top: 1.6rem;
+}
+body {
+  background-color: #f3f3f3;
 }
 </style>
