@@ -1,6 +1,6 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/markkuhn/the-shoppies?style=flat-square)
 
-<h3 align="center">The Shoppies</h3>
+<h2 align="center">The Shoppies</h2>
 <p align="center">Movie awards for entrepreneurs</p>
 
 ![logo](https://i.imgur.com/BS3OSlO.jpg)
