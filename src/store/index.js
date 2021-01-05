@@ -18,7 +18,7 @@ const mutations = {
     } else {
       var shareLink = "http://www.shoppies.me/?";
       state.nominations.forEach(
-        movie => (shareLink += `nomination=${movie.imdbID}`)
+        movie => (shareLink += `nomination=${movie.imdbID}&`)
       );
       state.shareLink = shareLink.substring(0, shareLink.length - 1);
     }

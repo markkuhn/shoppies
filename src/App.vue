@@ -66,8 +66,8 @@ export default {
   },
   created() {
     if (document.location.search) {
-      var noms = document.location.search.substring(1).split('&');
       var ids = [];
+      var noms = document.location.search.substring(1).split('&');
       noms.forEach(id => ids.push(id.split('=')[1]));
       this.$store.dispatch("restoreNominations", ids);
     }
