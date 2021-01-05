@@ -1,7 +1,7 @@
 <template>
   <teleport to="body">
     <transition name="banner">
-      <div v-if="show" class="ui floating message error">
+      <div v-if="show" class="ui floating message info">
         <div class="header">
           <slot name="header"></slot>
         </div>
