@@ -7,14 +7,14 @@
     <transition name="fade">
       <div v-if="shareLink.length > 0" class="ui mini action input">
         <input id="share-link" type="text" :value="shareLink" />
-        <button class="ui teal right labeled icon mini button" @click="copy">
+        <button class="ui blue right labeled icon mini button" @click="copy">
           <i class="copy icon"></i>
           Copy
         </button>
       </div>
     </transition>
   </div>
-  
+
   <BaseBanner :show="bannerOpen">
     <template #header>No nominations</template>
     <template #default>
@@ -48,6 +48,16 @@ export default {
 </script>
 
 <style>
+.blue.button {
+  background-color: #303942 !important;
+}
+.blue.button:hover {
+  background-color: #242b32 !important;
+}
+.blue.button:active {
+  background-color: #191d23 !important;
+}
+
 /* Animations */
 .fade-enter-active,
 .fade-leave-active {
