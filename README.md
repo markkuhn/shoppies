@@ -16,6 +16,7 @@ http://www.shoppies.me
 
 ## Key features
 
- - Search for movies using OMDB
- - Add and remove movies to nomination list
+ - Search for movies using OMDB's API
+ - Add and remove movies to/from nomination list
  - Share nomination list with friends
+ - Save nomination list if user leaves the page
