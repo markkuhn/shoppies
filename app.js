@@ -67,5 +67,7 @@ if (process.env.NODE_ENV === "production") {
 
 // LISTEN
 app.listen(process.env.PORT || 3000, () => {
-  console.log(`[SERVER RUNNING] [${new Date()}]`);
+  console.log(
+    `[SERVER RUNNING] [PORT:${process.env.PORT || 3000}] [${new Date()}]`
+  );
 });
