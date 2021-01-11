@@ -72,6 +72,9 @@ export default {
       noms.forEach(id => ids.push(id.split("=")[1]));
       this.$store.dispatch("restoreNominations", ids);
     }
+    else if (localStorage.getItem('nominations')) {
+      this.$store.dispatch("restoreNominations", JSON.parse(localStorage.getItem('nominations')));
+    }
   },
   methods: {
     ...mapActions(["getSearchResults"]),

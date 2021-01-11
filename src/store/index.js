@@ -8,6 +8,7 @@ const mutations = {
 
   removeNomination(state, { imdbID }) {
     state.nominations = state.nominations.filter(e => e.imdbID != imdbID);
+    localStorage.setItem('nominations', JSON.stringify(state.nominations.map(e => e.imdbID)));
   },
 
   createShareLink(state) {
@@ -51,6 +52,7 @@ const actions = {
     // Check if valid movie and list not full
     if (response.data.Response != "False" && state.nominations.length < 5) {
       state.nominations.push(response.data);
+      localStorage.setItem('nominations', JSON.stringify(state.nominations.map(e => e.imdbID)));
     }
 
     // Check if list full
