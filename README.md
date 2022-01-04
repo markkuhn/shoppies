@@ -8,12 +8,6 @@
 ## Overview
 The following project is my version of the Shopify Web Developer Intern Challenge.
 
-## Demo
-
-```
-http://www.shoppies.me
-```
-
 ## Key features
 
  - Search for movies using OMDB's API
